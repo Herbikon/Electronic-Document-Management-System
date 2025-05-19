@@ -1,0 +1,163 @@
+/* Общие стили */
+body {
+  font-family: "Arial Black";
+  background: #ffffff;
+  color: #1C1C1C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+/* Контейнер */
+form {
+  background: #C0C0C0;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 25px #909090;
+  width: 350px;
+}
+
+/* Заголовок */
+h1 {
+  margin-bottom: 25px;
+  font-size: 50px;
+  text-shadow: 0 5px 8px #909090;
+}
+
+/* Сообщение об ошибке */
+ul {
+  background: #C0C0C0;
+  padding: 20px;
+  border-radius: 25px;
+  list-style: none;
+  text-shadow: 0 2px 5px #909090;
+  box-shadow: 0 5px 10px #909090;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  background: #ffffff;
+}
+
+/* Кнопка */
+button {
+  width: 50%;
+  padding: 14px;
+  background-color: #828282;
+  border: none;
+  border-radius: 20px;
+  font-family: "Arial Black";
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 85px;
+  color: #1C1C1C;
+}
+
+button:hover {
+  background-color: #696969;
+  transform: translateY(5px);
+  color: #ffffff;
+}
+/* Ссылки (Загрузить документ, Выйти) */
+a {
+  color: #1C1C1C;
+  text-decoration: none;
+  background: #C0C0C0;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px #909090;
+  margin: 0 30px 10px;
+}
+
+a:hover {
+  background-color: #909090;
+  transform: translateY(5px);
+  color: #ffffff;
+}
+
+/* Заголовок второго уровня */
+h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+  text-shadow: 0 3px 5px #bbb;
+}
+
+/* Таблица */
+table {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: 0 5px 10px #909090;
+}
+
+/* Заголовки таблицы */
+th {
+  background: #C0C0C0;
+  padding: 15px 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Ссылки в заголовках (для сортировки) */
+th a {
+  color: #1C1C1C;
+  text-decoration: none;
+  background: #C0C0C0;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px #909090;
+  margin: 0 30px 10px;
+}
+
+/* Строки таблицы */
+tr {
+  background: #ffffff;
+}
+
+/* Ячейки таблицы */
+td {
+  padding: 15px 20px;
+  border-bottom: none;
+  vertical-align: middle;
+  color: #1C1C1C;
+}
+
+/* Действия (ссылки в ячейках) */
+td a {
+  color: #1C1C1C;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 10px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: #C0C0C0;
+  box-shadow: 0 3px 6px #909090;
+}
+
+td a:hover {
+  background-color: #909090;
+  color: #fff;
+}
+
+/* Поле выбора файла */
+input[type="file"] {
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 8px 12px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+
+
