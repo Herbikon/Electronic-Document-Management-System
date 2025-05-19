@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Главная</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Добро пожаловать, {{ current_user.username }}!</h1>
+    
+    <a href="{{ url_for('upload') }}">Загрузить документ</a>
+    <a href="{{ url_for('logout') }}">Выйти</a>
+
+    <h2>Документы:</h2>
+    <table border="1">
+        <tr>
+            {% set title_order = 'asc' if sort_by != 'title' or order == 'desc' else 'desc' %}
+            <th>
+                <a href="{{ url_for('home', sort_by='title', order='asc') }}">По названию (А-Я)</a>
+                    Наименование {% if sort_by == 'title' %}{% endif %}
+                </a>
+            </th>
+            {% set status_order = 'asc' if sort_by != 'status' or order == 'desc' else 'desc' %}
+            <th>
+                <a href="{{ url_for('home', sort_by='status', order='asc') }}">По Статусу</a>
+                    Статус {% if sort_by == 'status' %}{% endif %}
+                </a>
+            </th>
+            {% set date_order = 'asc' if sort_by != 'file20:17 13.05.2025_date' or order == 'desc' else 'desc' %}
+            <th>
+                <a href="{{ url_for('home', sort_by='file_date', order='asc') }}">По Дате</a>
+                    Дата {% if sort_by == 'file_date' %}{% endif %}
+                </a>
+            </th>
+            <th>Действия</th>
+        </tr>
+        {% for doc in documents %}
+        <tr>
+            <td>{{ doc[1] }}</td>
+	    <td>{{ doc[3] }}</td>
+	    <td>{{ doc[4] }}</td>
+            <td>
+                <a href="{{ url_for('download', doc_id=doc[0]) }}">Скачать</a>
+                {% if current_user.role == 'admin' or current_user.id == doc[5] %}
+                    | <a href="{{ url_for('change_status', doc_id=doc[0], status='Одобрено') }}">Одобрить</a>
+                    | <a href="{{ url_for('change_status', doc_id=doc[0], status='Отклонено') }}">Отклонить</a>
+		    | <a href="{{ url_for('delete', doc_id=doc[0]) }}"
+			onclick="return confirm('Удалить документ?')">Удалить</a> 
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
